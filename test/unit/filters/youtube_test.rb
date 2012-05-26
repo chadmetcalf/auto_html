@@ -28,7 +28,7 @@ class YouTubeTest < Test::Unit::TestCase
   end
 
   def test_transform_with_options
-    result = auto_html('http://www.youtube.com/watch?v=BwNrmYRiX_o') { youtube(:width => 300, :height => 255, :frameborder => 1, :wmode => 'window') }
+    result = auto_html('http://www.youtube.com/watch?v=BwNrmYRiX_o') { youtube(:width => 300, :height => 255, :frameborder => 1, params: {:wmode => 'window'}) }
     assert_equal '<iframe width="300" height="255" src="http://www.youtube.com/embed/BwNrmYRiX_o?wmode=window" frameborder="1" allowfullscreen></iframe>', result
   end
 
